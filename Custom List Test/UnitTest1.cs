@@ -99,7 +99,7 @@ namespace Custom_List_Test
         {
             // arrange
             TestingClass thing = new TestingClass();
-            int[] values = { 1, 2, 3, 4 };
+            int[] values = {1, 2, 3, 4 };
             int[] values2;
             int[] expected = {3, 4, 5, 6 };
             int[] actual;
