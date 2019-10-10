@@ -61,5 +61,55 @@ namespace Custom_List_Test
             // assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Add_4ItemsToList()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 4;
+            int actual;
+
+            // act
+            testList.Add(67);
+            testList.Add(67);
+            testList.Add(67);
+            testList.Add(67);    
+            actual = testList.Count;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void IntArrary_AddOneToAllIndex()
+        {
+            // arrange
+            TestingClass thing = new TestingClass();
+            int[] values = { 1, 2, 3, 4 };
+            int[] expected = { 2, 3, 4, 5 };
+            int[] actual;
+
+            // act
+            actual = thing.AddOneToArray(values);
+
+            // assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void IntArray_CallingMethodTwice()
+        {
+            // arrange
+            TestingClass thing = new TestingClass();
+            int[] values = { 1, 2, 3, 4 };
+            int[] values2;
+            int[] expected = {3, 4, 5, 6 };
+            int[] actual;
+
+            // act
+            values2 = thing.AddOneToArray(values);
+            actual = thing.AddOneToArray(values2);
+
+            // assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
     }
 }

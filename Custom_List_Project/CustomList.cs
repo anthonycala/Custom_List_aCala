@@ -13,11 +13,18 @@ namespace Custom_List_Project
         public CustomList()
         {
             items = new T[4];
+
         }
 
         public void Add(T itemToAdd)
         {
 
+        }
+        public int count;
+        public int Count
+        {
+            get => count;
+            set => count = value;
         }
     }
 }
