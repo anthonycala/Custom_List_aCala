@@ -61,10 +61,22 @@ namespace Custom_List_Project
             //update items array with what we did with temporary array
             count++;
         }
-        public void Remove(T item)
+        public bool Remove(T item)
         {
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (item.Equals(items[i]))
+                {
+                    for (int j = i; j < items.Length; j++)
+                    {
+                        items[j] = items[j+1];
 
-
+                    }
+                    count--;
+                    break;
+                }
+            }
+            return true;
         }
     }
 }
