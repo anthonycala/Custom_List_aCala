@@ -36,13 +36,15 @@ namespace Custom_List_Project
                 temporary = new T[capacity *= 2];
 
                 //copy values from "old array" to "new array" one at a time
-                //for loop is goo tool for 
-                for (int i = 0; i < temporary.Length; i++);
+                //for loop is good tool for 
+                for (int i = 0; i < items.Length; i++)
+                {
+                    temporary[i] = items[i];
+                }
                 
-
             }
             items[count] = item;
-            //update items array with what we did with temporaty array
+            //update items array with what we did with temporary array
             count++;
         }
         public void Remove(T item)
