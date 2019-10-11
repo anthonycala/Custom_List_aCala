@@ -105,7 +105,7 @@ namespace Custom_List_Test
         {
             // arrange
             CustomList<int> testList = new CustomList<int>();
-            int expected = 0;
+            int expected = 2;
             int actual;
 
             // act
@@ -114,6 +114,51 @@ namespace Custom_List_Test
             testList.Add(234);
             testList.Remove(234);
             actual = testList.Count;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+
+            // unit test for adding multiple items to check position of last item
+            // unit test for adding multiple items to check Count property
+            // unit test for adding number of items beyond 'Capacity' but it still adds
+        }
+        [TestMethod]
+        public void Remove_Shift()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 334;
+            int actual;
+
+            // act
+            testList.Add(234);
+            testList.Add(334);
+            testList.Add(236);
+            testList.Remove(234);
+            actual = testList[0];
+
+            // assert
+            Assert.AreEqual(expected, actual);
+
+            // unit test for adding multiple items to check position of last item
+            // unit test for adding multiple items to check Count property
+            // unit test for adding number of items beyond 'Capacity' but it still adds
+        }
+        [TestMethod]
+        public void Remove_ShiftMiddleCheck()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 240;
+            int actual;
+
+            // act
+            testList.Add(234);
+            testList.Add(236);
+            testList.Add(238);
+            testList.Add(240);
+            testList.Remove(238);
+            actual = testList[2];
 
             // assert
             Assert.AreEqual(expected, actual);
