@@ -17,10 +17,11 @@ namespace Custom_List_Test
 
             // act
             testList.Add(12);
+          
             actual = testList[0];
 
             // assert
-            Assert.AreEqual(expected, actual);
+          Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -78,6 +79,48 @@ namespace Custom_List_Test
 
             // assert
             Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Remove_FromList()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 0;
+            int actual;
+
+            // act
+            testList.Add(234);
+            testList.Remove(234);
+            actual = testList.Count;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+
+            // unit test for adding multiple items to check position of last item
+            // unit test for adding multiple items to check Count property
+            // unit test for adding number of items beyond 'Capacity' but it still adds
+        }
+        [TestMethod]
+        public void Remove_FromListAgain()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>();
+            int expected = 0;
+            int actual;
+
+            // act
+            testList.Add(234);
+            testList.Add(234);
+            testList.Add(234);
+            testList.Remove(234);
+            actual = testList.Count;
+
+            // assert
+            Assert.AreEqual(expected, actual);
+
+            // unit test for adding multiple items to check position of last item
+            // unit test for adding multiple items to check Count property
+            // unit test for adding number of items beyond 'Capacity' but it still adds
         }
         //[TestMethod]
         //public void IntArrary_AddOneToAllIndex()

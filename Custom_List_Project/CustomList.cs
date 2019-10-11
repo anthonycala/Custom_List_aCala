@@ -15,9 +15,22 @@ namespace Custom_List_Project
         //store values in an array
         {
             items = new T[4];
-            
+
 
         }
+        public T this[int index] 
+        { 
+           get 
+           {
+                return items[index];
+           } 
+           set 
+           {
+                items[index] = value;
+           } 
+        }
+
+
 
         //get number of items in my list
         private int count;
@@ -41,7 +54,8 @@ namespace Custom_List_Project
                 {
                     temporary[i] = items[i];
                 }
-                
+                items = temporary;
+
             }
             items[count] = item;
             //update items array with what we did with temporary array
