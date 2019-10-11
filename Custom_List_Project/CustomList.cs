@@ -69,7 +69,11 @@ namespace Custom_List_Project
                 {
                     for (int j = i; j < items.Length; j++)
                     {
-                        items[j] = items[j+1];
+                        if(j != items.Length - 1)
+                        {
+                            items[j] = items[j + 1];
+
+                        }
 
                     }
                     count--;
