@@ -82,5 +82,16 @@ namespace Custom_List_Project
             }
             return true;
         }
+        public override string ToString() 
+        {
+
+            CustomList<int> numbers = new CustomList<int>();
+            numbers.Add(4);
+            numbers.Add(7);
+            numbers.Add(11);
+            numbers.Add(21);
+            numbers.Add(2);
+            string result = numbers.ToString();
+        }
     }
 }
