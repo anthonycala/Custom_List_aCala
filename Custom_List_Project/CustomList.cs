@@ -22,7 +22,7 @@ namespace Custom_List_Project
         { 
            get 
            {
-                if (count < index)
+                if (count > index)
                     return items[index];
                 else
                     throw new ArgumentOutOfRangeException();
@@ -34,7 +34,7 @@ namespace Custom_List_Project
                 items[index] = value;
                 else
                     throw new ArgumentOutOfRangeException();
-            } 
+           } 
         }
 
 
@@ -91,21 +91,15 @@ namespace Custom_List_Project
         }
         public override string ToString() 
         {
-
-            CustomList<int> numbers = new CustomList<int>();
-            numbers.Add(4);
-            numbers.Add(7);
-            numbers.Add(11);
-            numbers.Add(21);
-            numbers.Add(2);
-            string result = numbers.ToString();
+            string result = "";
             for (int i = 0; i < count; i++)
             {
-                if(count == i + 1)
-                {
-                   
-                }
+                result += items[i].ToString();
             }
+            return result;
+
+
+
         }
     }
 }
