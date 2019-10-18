@@ -17,11 +17,11 @@ namespace Custom_List_Test
 
             // act
             testList.Add(12);
-          
+
             actual = testList[0];
 
             // assert
-          Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -74,7 +74,7 @@ namespace Custom_List_Test
             testList.Add(67);
             testList.Add(67);
             testList.Add(67);
-            testList.Add(67);    
+            testList.Add(67);
             actual = testList.Count;
 
             // assert
@@ -203,38 +203,52 @@ namespace Custom_List_Test
             // assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void OverloadOperatorAdd()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            string expected = "43211234";
+            CustomList<int> actual;
 
-        //[TestMethod]
-        //public void IntArrary_AddOneToAllIndex()
-        //{
-        //    // arrange
-        //    TestingClass thing = new TestingClass();
-        //    int[] values = { 1, 2, 3, 4 };
-        //    int[] expected = { 2, 3, 4, 5 };
-        //    int[] actual;
+            // act
+            testList1.Add(4);
+            testList1.Add(3);
+            testList1.Add(2);
+            testList1.Add(1);
+            testList2.Add(1);
+            testList2.Add(2);
+            testList2.Add(3);
+            testList2.Add(4);
+            actual = testList1 + testList2;
 
-        //    // act
-        //    actual = thing.AddOneToArray(values);
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        public void OverloadOperatorRemove()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            string expected = "4321124";
+            CustomList<int> actual;
 
-        //    // assert
-        //    CollectionAssert.AreEqual(expected, actual);
-        //}
-        //[TestMethod]
-        //public void IntArray_CallingMethodTwice()
-        //{
-        //    // arrange
-        //    TestingClass thing = new TestingClass();
-        //    int[] values = {1, 2, 3, 4 };
-        //    int[] values2;
-        //    int[] expected = {3, 4, 5, 6 };
-        //    int[] actual;
+            // act
+            testList1.Add(4);
+            testList1.Add(3);
+            testList1.Add(2);
+            testList1.Add(1);
+            testList2.Add(1);
+            testList2.Add(2);
+            testList2.Add(3);
+            testList2.Add(4);
+            testList2.Remove(3);
+            actual = testList1 + testList2;
 
-        //    // act
-        //    values2 = thing.AddOneToArray(values);
-        //    actual = thing.AddOneToArray(values2);
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
 
-        //    // assert
-        //    CollectionAssert.AreEqual(expected, actual);
-        //}
     }
 }
