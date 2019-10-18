@@ -167,6 +167,43 @@ namespace Custom_List_Test
             // unit test for adding multiple items to check Count property
             // unit test for adding number of items beyond 'Capacity' but it still adds
         }
+        [TestMethod]
+        public void TestOneToString()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>();
+            string expected = "1234";
+            string actual;
+
+            // act
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            actual = testList.ToString();
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestTwoToString()
+        {
+            // arrange
+            CustomList<int> testList = new CustomList<int>();
+            string expected = "4321";
+            string actual;
+
+            // act
+            testList.Add(4);
+            testList.Add(3);
+            testList.Add(2);
+            testList.Add(1);
+            actual = testList.ToString();
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
         //[TestMethod]
         //public void IntArrary_AddOneToAllIndex()
         //{
