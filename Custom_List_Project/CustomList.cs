@@ -22,12 +22,19 @@ namespace Custom_List_Project
         { 
            get 
            {
-                return items[index];
+                if (count < index)
+                    return items[index];
+                else
+                    throw new ArgumentOutOfRangeException();
+                
            } 
            set 
            {
+                if(count < index)
                 items[index] = value;
-           } 
+                else
+                    throw new ArgumentOutOfRangeException();
+            } 
         }
 
 
@@ -92,6 +99,13 @@ namespace Custom_List_Project
             numbers.Add(21);
             numbers.Add(2);
             string result = numbers.ToString();
+            for (int i = 0; i < count; i++)
+            {
+                if(count == i + 1)
+                {
+                   
+                }
+            }
         }
     }
 }
