@@ -326,7 +326,7 @@ namespace Custom_List_Test
             CustomList<int> testList1 = new CustomList<int>();
             CustomList<int> testList2 = new CustomList<int>();
             CustomList<int> testList3 = new CustomList<int>();
-            int expected = 6;
+            int expected = 4;
             int actual;
 
             // act
@@ -339,7 +339,7 @@ namespace Custom_List_Test
             testList2.Add(3);
             testList2.Add(6);
             testList3 = testList1 - testList2;
-            actual = testList3[2];
+            actual = testList3[1];
 
             // assert
             Assert.AreEqual(expected, actual);
