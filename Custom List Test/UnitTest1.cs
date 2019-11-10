@@ -209,29 +209,73 @@ namespace Custom_List_Test
             // arrange
             CustomList<int> testList1 = new CustomList<int>();
             CustomList<int> testList2 = new CustomList<int>();
-            string expected = "43211234";
-            CustomList<int> actual;
+            CustomList<int> testList3 = new CustomList<int>();
+            int expected = 1;
+            int actual;
 
             // act
-            testList1.Add(4);
-            testList1.Add(3);
-            testList1.Add(2);
             testList1.Add(1);
-            testList2.Add(1);
-            testList2.Add(2);
-            testList2.Add(3);
+            testList1.Add(2);
+            testList1.Add(3);
             testList2.Add(4);
-            actual = testList1 + testList2;
-
+            testList2.Add(5);
+            testList2.Add(6);
+            testList3 = testList1 + testList2;
+            actual = testList3[0];
             // assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void OverloadOperatorAddCustomeList1and2()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> testList3 = new CustomList<int>();
+            int expected = 2;
+            int actual;
+
+            // act
+            testList1.Add(1);
+            testList1.Add(2);
+            testList1.Add(3);
+            testList2.Add(4);
+            testList2.Add(5);
+            testList2.Add(6);
+            testList3 = testList1 + testList2;
+            actual = testList3[1];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void OverloadOperatorAddCustomeCheckIndex2()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> testList3 = new CustomList<int>();
+            int expected = 3;
+            int actual;
+
+            // act
+            testList1.Add(1);
+            testList1.Add(2);
+            testList1.Add(3);
+            testList2.Add(4);
+            testList2.Add(5);
+            testList2.Add(6);
+            testList3 = testList1 + testList2;
+            actual = testList3[2];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void OverloadOperatorRemove()
         {
             // arrange
             CustomList<int> testList1 = new CustomList<int>();
             CustomList<int> testList2 = new CustomList<int>();
-            string expected = "4321124";
+            int expected = 4321124;
             CustomList<int> actual;
 
             // act
