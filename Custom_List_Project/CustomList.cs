@@ -123,6 +123,16 @@ namespace Custom_List_Project
             }
             return list1;
         }
+        public CustomList<T> Zip(CustomList<T> list)
+        {
+            CustomList<T> temporaryList = new CustomList<T>();
+            for (int i = 0; i < Count; i++)
+            {
+                temporaryList.Add(items[i]);
+                temporaryList.Add(list[i]);
+            }
+            return temporaryList;
+        }
     }
 }
 

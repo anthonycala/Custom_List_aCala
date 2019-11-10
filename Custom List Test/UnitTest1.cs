@@ -344,5 +344,71 @@ namespace Custom_List_Test
             // assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void ZipFunction_ZipsTwoCustomListsTogether()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> newList = new CustomList<int>();
+            int expected = 1;
+            int actual;
+            // act
+            // act
+            testList1.Add(1);
+            testList1.Add(3);
+            testList1.Add(5);
+            testList2.Add(2);
+            testList2.Add(4);
+            testList2.Add(6);
+            newList = testList1.Zip(testList2);
+            actual = newList[0];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ZipFunction_ZipsTwoCustomListsTogetherTwo()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> newList = new CustomList<int>();
+            int expected = 4;
+            int actual;
+            // act
+            
+            testList1.Add(1);
+            testList1.Add(2);
+            testList1.Add(3);
+            testList2.Add(4);
+            testList2.Add(5);
+            testList2.Add(6);
+            newList = testList1.Zip(testList2);
+            actual = newList[1];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ZipFunction_ZipsTwoCustomListsTogetherThree()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> newList = new CustomList<int>();
+            int expected = 7;
+            int actual;
+            // act
+
+            testList1.Add(6);
+            testList1.Add(7);
+            testList1.Add(8);
+            testList2.Add(9);
+            testList2.Add(10);
+            testList2.Add(11);
+            newList = testList1.Zip(testList2);
+            actual = newList[2];
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
