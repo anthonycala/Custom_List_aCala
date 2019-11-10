@@ -319,6 +319,30 @@ namespace Custom_List_Test
             // assert
             Assert.AreEqual(expected, actual);
         }
-        
+        [TestMethod]
+        public void OverloadOperatorRemoveDupplicatesAgain()
+        {
+            // arrange
+            CustomList<int> testList1 = new CustomList<int>();
+            CustomList<int> testList2 = new CustomList<int>();
+            CustomList<int> testList3 = new CustomList<int>();
+            int expected = 6;
+            int actual;
+
+            // act
+            testList1.Add(1);
+            testList1.Add(2);
+            testList1.Add(3);
+            testList1.Add(4);
+            testList2.Add(1);
+            testList2.Add(2);
+            testList2.Add(3);
+            testList2.Add(6);
+            testList3 = testList1 - testList2;
+            actual = testList3[2];
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
